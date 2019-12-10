@@ -1,0 +1,17 @@
+﻿@model List<Menu>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Menus</h1>
+
+@foreach(Menu menu in Model)
+{
+    <ul>
+        <li><a asp-controller="Menu" asp-action="ViewMenu" asp-route-id="@menu.MenuID">@menu.Name</a></li>
+    </ul>
+}
+
+<a asp-controller="Menu" asp-action="Add">Add menu</a>

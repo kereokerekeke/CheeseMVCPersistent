@@ -1,0 +1,28 @@
+﻿@model Cheeses.ViewModels.AddCheeseViewModel
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+    <div asp-validation-summary="All"></div>        
+
+    <form asp-controller="Cheese" asp-action="Add" method="post">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input class="form-control" asp-for="Description" />
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryID"></label>
+            <select asp-for="CategoryID" asp-items="Model.Categories"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="Raiting"></label>
+            <input class="form-control" asp-for="Raiting" />
+        </div>
+        <input class="btn-primary align-content-center" type="submit" value="Add Cheese" />
+    </form>
+
